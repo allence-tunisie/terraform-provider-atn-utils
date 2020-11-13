@@ -2,6 +2,8 @@ stages:
   - test
 
 test:
+  tags:
+    - aws-runner
   stage: test
   script: 
     - pwd
