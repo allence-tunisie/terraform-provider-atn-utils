@@ -1,2 +1,7 @@
 stages:
   - test
+
+job:
+  stage: test
+  script: 
+    - pwd
