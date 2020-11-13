@@ -1,3 +1,2 @@
 stages:
-  - test-ci
   - test-go
