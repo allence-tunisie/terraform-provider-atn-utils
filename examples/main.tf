@@ -19,5 +19,6 @@ data "atn-utils_gitlab_package" "zip" {
 }
 data "atn-utils_nexus_package" "zip" {
   repository_url = "https://exemple.com/repository/maven-releases/com/atn/aws-webapp-nodejs/0.0.0/aws-webapp-nodejs-0.0.0.zip"
-  output_path = "api-nexus.zip"
+  output_path = "api"
+  with_extract = true
 }

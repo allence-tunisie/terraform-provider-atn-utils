@@ -16,6 +16,7 @@ data "atn-utils_nexus_package" "zip" {
 The following arguments are supported:
 * `repository_url` - (Required) The repository package url.
 * `output_path` - (Required) The host path where the file will be created. 
+* `with_extract` - (Optional) if the file is a zip, and you want to extract it in output_path set to `true`. 
 
 
 ## Attributes Reference
