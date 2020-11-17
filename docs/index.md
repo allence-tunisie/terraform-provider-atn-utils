@@ -26,10 +26,12 @@ data "atn-utils_gitlab_package" "zip" {
   repository_url = var.gitlab_package_url
   access_token = var.gitlab_api_token
   output_path = "package-gitlab.zip"
+  with_extract = false
 }
 data "atn-utils_nexus_package" "zip" {
   repository_url = var.nexus_package_url
-  output_path = "package-nexus.zip"
+  output_path = "package-nexus"
+  with_extract = true
 }
 ```
 
