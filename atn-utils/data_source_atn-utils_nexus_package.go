@@ -18,6 +18,12 @@ func dataSourcePackageNexus() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
+			"with_extract": {
+				Type:     schema.TypeBool,
+				Optional: true,
+				Default:  false,
+			},
+
 		},
 	}
 }
@@ -26,8 +32,9 @@ func dataSourcePackageNexusRead(ctx context.Context, data *schema.ResourceData, 
 	var diags diag.Diagnostics
 	var repositoryURL = data.Get("repository_url").(string)
 	var outputPath = data.Get("output_path").(string)
+	var unzip = data.Get("with_extract").(bool)
 	key := "PRIVATE-TOKEN"
-	err := DownloadFile(outputPath, repositoryURL , key , "token")
+	err := DownloadFile(outputPath, repositoryURL , key , "token" , unzip)
 	if err != nil {
 		return diag.Errorf("Nexus download failure : %s" , err)
 	}
